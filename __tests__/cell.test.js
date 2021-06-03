@@ -23,6 +23,13 @@ describe('cell tests', () => {
     expect(cell.neighbors).toEqual([])
   })
 
+  /**
+   * 1 dead -> live
+   * 1 vivo ->
+   * 1 vivo -> vivo
+   * 1 dead -> <dead></dead>
+   */
+
   test('should change state from dead to live', () => {
     const n1 = new Cell(LIVE)
     const n2 = new Cell(LIVE)
@@ -35,12 +42,6 @@ describe('cell tests', () => {
     cell.updateState()
     expect(cell.getState()).toBe(LIVE)
   })
-  /**
-   * 1 dead -> live
-   * 1 vivo ->
-   * 1 vivo -> vivo
-   * 1 dead -> <dead></dead>
-   */
 
   test('should change state from live to dead', () => {
     const n1 = new Cell(LIVE)
